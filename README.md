@@ -1,4 +1,4 @@
-# apz-pzpi-22-7-bystrytska-anastasiia  
+# apz-pzpi-22-7-ihnatiev-oleksii  
 ПЗПІ-22-7  
 Ігнатьєв Олексій  
 Патерн проєктування Command  
