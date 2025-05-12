@@ -128,77 +128,73 @@ o Invoker: відповідальний за зберігання та ініц�
 ДОДАТОК В
 
 // До: прямий виклик методу
+01 public class RemoteControl {
+02     private Light light;
+03 
+04     public RemoteControl(Light light) {
+05         this.light = light;
+06     }
+07 
+08     public void pressButton() {
+09         light.on();  // Пряма залежність
+10     }
+11 }
 
-public class RemoteControl {
-    private Light light;
+ // Після: використання патерна Command
+12 public class LightOnCommand implements Command {
+13     private Light light;
+14     public LightOnCommand(Light light) { this.light = light; }
+15     public void execute() { light.on(); }
+16 }
 
-    public RemoteControl(Light light) {
-        this.light = light;
-    }
+17 public class RemoteControl {
+18     private Command command;
+19     public RemoteControl(Command command) {
+20         this.command = command;
+21     }
+22     public void pressButton() {
+23         command.execute();  // Гнучкість
+24     }
+25 }
 
-    public void pressButton() {
-        light.on();  // Пряма залежність
-    }
-}
+ // До: пряма взаємодія
+26 public class ShutdownManager {
+27     private Computer computer;
+28 
+29     public ShutdownManager(Computer computer) {
+30         this.computer = computer;
+31     }
+32 
+33     public void shutdown() {
+34         computer.turnOff();  // Жорстке зв’язування
+35     }
+36 }
 
-// Після: використання патерна Command
+ // Після: інкапсульована команда
+37 public class ShutdownCommand implements Command {
+38     private Computer computer;
+39     public ShutdownCommand(Computer computer) { this.computer = computer; }
+40     public void execute() { computer.turnOff(); }
+41 }
 
-public class LightOnCommand implements Command {
-    private Light light;
-    public LightOnCommand(Light light) { this.light = light; }
-    public void execute() { light.on(); }
-}
+42 public class ShutdownManager {
+43     private Command command;
+44     public ShutdownManager(Command command) {
+45         this.command = command;
+46     }
+47     public void shutdown() {
+48         command.execute();  // Гнучкість і масштабованість
+49     }
+50 }
 
-public class RemoteControl {
-    private Command command;
-    public RemoteControl(Command command) {
-        this.command = command;
-    }
-    public void pressButton() {
-        command.execute();  // Гнучкість
-    }
-}
+ // Приклад інтерфейсу
+51 public interface Command {
+52     void execute();
+53 }
 
-// До: пряма взаємодія
-
-public class ShutdownManager {
-    private Computer computer;
-
-    public ShutdownManager(Computer computer) {
-        this.computer = computer;
-    }
-
-    public void shutdown() {
-        computer.turnOff();  // Жорстке зв’язування
-    }
-}
-
-// Після: інкапсульована команда
-public class ShutdownCommand implements Command {
-    private Computer computer;
-    public ShutdownCommand(Computer computer) { this.computer = computer; }
-    public void execute() { computer.turnOff(); }
-}
-
-public class ShutdownManager {
-    private Command command;
-    public ShutdownManager(Command command) {
-        this.command = command;
-    }
-    public void shutdown() {
-        command.execute();  // Гнучкість і масштабованість
-    }
-}
-
-// Приклад коду (наприклад Java)
-
-public interface Command {
-    void execute();
-}
-
-public class LightOnCommand implements Command {
-    private Light light;
-    public LightOnCommand(Light light) { this.light = light; }
-    public void execute() { light.on(); }
-}
+54 public class LightOnCommand implements Command {
+55     private Light light;
+56     public LightOnCommand(Light light) { this.light = light; }
+57     public void execute() { light.on(); }
+58 }
 
