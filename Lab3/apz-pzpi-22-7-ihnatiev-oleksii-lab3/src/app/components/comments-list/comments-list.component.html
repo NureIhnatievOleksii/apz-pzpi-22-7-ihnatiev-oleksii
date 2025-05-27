@@ -1,0 +1,198 @@
+@if(authService.isLoggedIn()){
+<div class="comments-list-layout">
+  <!-- Левая половина: карта + показатели -->
+  <div class="left-side">
+    <div class="content-container">
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+
+      <h2>Якість повітря на вулиці</h2>
+      <p class="measured-time">
+        Дані зібрано: {{ components().dt * 1000 | date : "medium" }}
+      </p>
+
+      <div class="air-quality-grid">
+        <!-- показатели -->
+        <div class="pollutant">
+          <span>CO</span><strong>{{ components().components.co }}</strong
+          ><small>ч. м.</small>
+        </div>
+        <div class="pollutant">
+          <span>NO</span><strong>{{ components().components.no }}</strong
+          ><small>ч. м.</small>
+        </div>
+        <div class="pollutant">
+          <span>NO₂</span><strong>{{ components().components.no2 }}</strong
+          ><small>ч. м.</small>
+        </div>
+        <div class="pollutant">
+          <span>O₃</span><strong>{{ components().components.o3 }}</strong
+          ><small>ч. м.</small>
+        </div>
+        <div class="pollutant">
+          <span>SO₂</span><strong>{{ components().components.so2 }}</strong
+          ><small>ч. м.</small>
+        </div>
+        <div class="pollutant">
+          <span>PM2.5</span><strong>{{ components().components.pm2_5 }}</strong
+          ><small>мкг/м³</small>
+        </div>
+        <div class="pollutant">
+          <span>PM10</span><strong>{{ components().components.pm10 }}</strong
+          ><small>мкг/м³</small>
+        </div>
+        <div class="pollutant">
+          <span>NH₃</span><strong>{{ components().components.nh3 }}</strong
+          ><small>ч. м.</small>
+        </div>
+      </div>
+
+      <div class="air-score">
+        <span class="label">Загальна оцінка:</span>
+        <span class="value">{{ components().main.aqi }} / 5</span>
+        <span class="comment">– помірна якість повітря</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Правая половина: картинка + показатели -->
+  <div class="right-side">
+    <div class="content-container">
+      <div class="image-wrapper" style="text-align: right; margin-bottom: 10px">
+        <img
+          src="../../../assets/img/iot.png"
+          alt="Картинка качества воздуха"
+        />
+      </div>
+
+      <h2>Якість повітря</h2>
+      @if(AirPolutionIoT()){
+      <p class="device-info">Джерело: {{ AirPolutionIoT().deviceId }} |</p>
+      <p class="measured-time">
+        Дані зібрано: {{ AirPolutionIoT().measuredAt | date : "medium" }}
+      </p>
+
+      <div class="air-quality-grid">
+        <!-- показатели -->
+        <div class="pollutant">
+          <span>CO</span><strong>{{ AirPolutionIoT().co }}</strong
+          ><small>ч. м.</small>
+        </div>
+        <div class="pollutant">
+          <span>NO</span><strong>{{ AirPolutionIoT().no }}</strong
+          ><small>ч. м.</small>
+        </div>
+        <div class="pollutant">
+          <span>NO₂</span><strong>{{ AirPolutionIoT().no2 }}</strong
+          ><small>ч. м.</small>
+        </div>
+        <div class="pollutant">
+          <span>O₃</span><strong>{{ AirPolutionIoT().o3 }}</strong
+          ><small>ч. м.</small>
+        </div>
+        <div class="pollutant">
+          <span>SO₂</span><strong>{{ AirPolutionIoT().so2 }}</strong
+          ><small>ч. м.</small>
+        </div>
+        <div class="pollutant">
+          <span>PM2.5</span><strong>{{ AirPolutionIoT().pm2_5 }}</strong
+          ><small>мкг/м³</small>
+        </div>
+        <div class="pollutant">
+          <span>PM10</span><strong>{{ AirPolutionIoT().pm10 }}</strong
+          ><small>мкг/м³</small>
+        </div>
+        <div class="pollutant">
+          <span>NH₃</span><strong>{{ AirPolutionIoT().nh3 }}</strong
+          ><small>ч. м.</small>
+        </div>
+      </div>
+
+      <div class="air-score">
+        <span class="label">Загальна оцінка:</span>
+        <span class="value">{{ airQualityScore() }} / 5</span>
+        <span class="comment">– помірна якість повітря</span>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+<div class="full-width-card">
+  <mat-card appearance="outlined">
+    <mat-card-content>
+      <h3>Оберіть діапазон дат</h3>
+      <form [formGroup]="rangeForm">
+        <mat-form-field appearance="fill" style="width: 100%">
+          <mat-label>Діапазон дат</mat-label>
+          <mat-date-range-input
+            [rangePicker]="picker"
+            formGroupName="dateRange"
+            style="width: 100%"
+          >
+            <input matStartDate formControlName="start" placeholder="Початок" />
+            <input matEndDate formControlName="end" placeholder="Кінець" />
+          </mat-date-range-input>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+@for(obj of componentsListHistory(); track obj){
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Дані зібрано: {{ obj.dt * 1000 | date : "medium" }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="air-quality-grid mat-body-1" style="margin: 1rem 0">
+      <div class="pollutant">
+        <span>CO</span><strong>{{ obj.components.co }}</strong
+        ><small>ч. м.</small>
+      </div>
+      <div class="pollutant">
+        <span>NO</span><strong>{{ obj.components.no }}</strong
+        ><small>ч. м.</small>
+      </div>
+      <div class="pollutant">
+        <span>NO₂</span><strong>{{ obj.components.no2 }}</strong
+        ><small>ч. м.</small>
+      </div>
+      <div class="pollutant">
+        <span>O₃</span><strong>{{ obj.components.o3 }}</strong
+        ><small>ч. м.</small>
+      </div>
+      <div class="pollutant">
+        <span>SO₂</span><strong>{{ obj.components.so2 }}</strong
+        ><small>ч. м.</small>
+      </div>
+      <div class="pollutant">
+        <span>PM2.5</span><strong>{{ obj.components.pm2_5 }}</strong
+        ><small>мкг/м³</small>
+      </div>
+      <div class="pollutant">
+        <span>PM10</span><strong>{{ obj.components.pm10 }}</strong
+        ><small>мкг/м³</small>
+      </div>
+      <div class="pollutant">
+        <span>NH₃</span><strong>{{ obj.components.nh3 }}</strong
+        ><small>ч. м.</small>
+      </div>
+    </div>
+
+    <div class="air-score mat-body-1" style="margin-top: 1rem">
+      <span class="label"><strong>Загальна оцінка:</strong></span>
+      <span class="value">{{ obj.main.aqi }} / 5</span>
+      <span class="comment">– помірна якість повітря</span>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+}}
