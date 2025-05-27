@@ -1,0 +1,244 @@
+﻿МІНІСТЕРСТВО ОСВІТИ І НАУКИ УКРАЇНИ
+
+ХАРКІВСЬКИЙ НАЦІОНАЛЬНИЙ
+УНІВЕРСИТЕТ РАДІОЕЛЕКТРОНІКИ
+
+
+
+
+Лабораторна робота №3
+з дисципліни
+«Архітектура програмного забезпечення»
+
+
+
+
+
+
+
+
+Харків 2025
+1 ІСТОРІЯ ЗМІН
+Зміни звіту наведені у таблиці 1.1.
+Таблиця 1.1 - Історія змін
+№	Дата	Версія звіту	Опис змін
+1	10.05.2025	0.1	Створено розділ “Історія змін”
+2	10.05.2025	0.1	Створено розділ “Завдання”
+3	10.05.2025	0.1	Створено розділ “Опис виконаної роботи”
+4	10.05.2025	0.1	Створено розділ “Висновки”
+5	10.05.2025	0.1	Доданий Додаток А
+6	10.05.2025	0.1	Доданий Додаток Б
+
+
+2 ЗАВДАННЯ
+Необхідно розробити клієнтську / front-end частину програмної системи.
+Проаналізуйте завдання.
+Виконайте контрольні завдання.
+Відкрийте створений на попередній лабораторній роботі репозиторій GitHub.
+Створіть у репозиторії директорію Task4 та текстовий файл з описом інженерних рішень у цій частині проєкту, як вказано у додатку З
+Зафіксуйте кожну внесену зміну командою git commit з відповідним коментарем та фіксуйте цією командою усі наступні зміни у проєкті.
+Створіть у директорії Task4 піддиректорію для програмного коду, як вказано у додатку З
+Створіть програмний код, завантажте його у створену піддиректорію, зафіксуйте внесені у репозиторій зміни
+Виконайте функціональне тестування створеного програмного коду та створіть відеозапис цього тестування тривалістю 7..10 хвилин з усними поясненнями процесу тестування
+Завантажте створений відеозапис тестування YouTube канал для вашого облікового запису в домені @nure.ua
+Створіть для завантаженого запису його хронологічний опис.
+Оформіть звіт у форматі pdf та завантажте його на навчальну платформу https://dl.nure.ua/
+У коментарях до завантаженого звіту вкажіть посилання на відеозапис тестування у вашому каналі YouTube.
+
+
+3 ОПИС ВИКОНАНОЇ РОБОТИ
+Програмне забезпечення клієнтською/front-end частини розроблено на мові програмування Javascript та з використанням фреймворку Angular, бібліотек Angular-Material для дизайну в стилі Material, RxJs для збереження та управління станом вебдодатку, react-router-dom для динамічного управління сторінками на основі url. Програмне забезпечення отримує користувацькі пристрої, їх вимірювання, прогнози погоди, та різні дані системи (користувачі, міста, тощо) для адміністраторів з серверу. Автентифікація реалізована за допомогою JWT-токенів, які перевіряються а сервері при кожному запиті.
+На рисунку Б.1 у додатку Б наведена UML діаграма прецедентів.
+На рисунку Б.2 у додатку Б наведена діаграма компонентів.
+На рисунку Б.3 у додатку Б наведена діаграма взаємодії.
+На рисунку Б.4 у додатку Б наведена діаграма станів.
+
+
+4 ВИСНОВКИ
+Під час виконання лабораторної роботи було розроблено клієнтську / front-end частину програмної системи.
+
+
+Додаток А
+Посилання на відео та хронологічний опис
+
+Відеозапис доповіді на YouTube: https://youtu.be/b7zHcH34ahw
+Хронологічний опис доповіді:
+00:00 Вступ
+00:31 Реєстрація
+01:45 Інформація за геолокацією
+03:09 Запуск IoT
+03:29 Інформація за IoT
+04:35 Інформація за період
+05:50 Перевірка моніторінго за локацією
+
+
+Додаток Б
+Графічні матеріали
+
+
+Рисунок Б.1 - UML діаграма прецедентів
+
+
+Рисунок Б.2 - Діаграма компонентів
+
+
+Рисунок Б.3 - Діаграма взаємодії
+
+
+Рисунок Б.4 - Діаграма станів
+Додаток В
+Програмний код
+
+В.1 Математична обробка прикладних даних
+GitHub репозиторій: https://github.com/NureIhnatievOleksii/apz-pzpi-22-7-ihnatiev-oleksii/blob/main/Lab3/apz-pzpi-22-7-ihnatiev-oleksii-lab3/src/app/components/comments-list/comments-list.component.ts.
+
+1 airQualityScore = computed(() => {
+2 const data = this.AirPolutionIoT();
+3 if (!data) return null;
+
+4 function getScore(value: number, limits: number[]) {
+5 if (value <= limits[0]) return 5;
+6 if (value <= limits[1]) return 4;
+7 if (value <= limits[2]) return 3;
+8 if (value <= limits[3]) return 2;
+9 return 1;
+10 }
+
+11 const scores = [
+12 getScore(data.co, [1, 2, 5, 10]),
+13 getScore(data.no, [0.04, 0.06, 0.1, 0.2]),
+14 getScore(data.no2, [0.04, 0.08, 1.2, 1.8]),
+15 getScore(data.o3, [0.05, 0.1, 0.15, 0.2]),
+16 getScore(data.so2, [0.05, 0.1, 0.5, 1]),
+17 getScore(data.pm2_5, [10, 20, 35, 55]),
+18 getScore(data.pm10, [20, 40, 75, 100]),
+19 getScore(data.nh3, [0.2, 0.5, 1, 2]),
+20 ];
+
+21 const avg = scores.reduce((sum, s) => sum + s, 0) / scores.length;
+22 return Math.round(avg);
+23 });
+
+
+В.2 Адміністрування бізнес-логіки системи
+GitHub репозиторій: https://github.com/ArRuslan/apz-frontend/blob/master/src/pages/admin/UsersPage.jsx.
+
+1 import { Injectable } from '@angular/core';
+2 import {
+3 HttpInterceptor,
+4 HttpRequest,
+5 HttpHandler,
+6 HttpEvent,
+7 HttpErrorResponse,
+8 } from '@angular/common/http';
+9 import { Observable, throwError } from 'rxjs';
+10 import { catchError } from 'rxjs/operators';
+11 import { AuthService } from './auth.service';
+12 import { Router } from '@angular/router';
+
+13 @Injectable()
+14 export class AuthInterceptor implements HttpInterceptor {
+15 constructor(private authService: AuthService, private router: Router) {}
+
+16 intercept(
+17 req: HttpRequest<unknown>,
+18 next: HttpHandler
+19 ): Observable<HttpEvent<unknown>> {
+20 const token = localStorage.getItem('authToken');
+
+21 const authReq = token
+22 ? req.clone({
+23 setHeaders: {
+a. Authorization: `Bearer ${token}`,
+24 },
+25 })
+26 : req;
+
+27 return next.handle(authReq).pipe(
+28 catchError((error: HttpErrorResponse) => {
+29 if (error.status === 401) {
+30 this.authService.logout().subscribe(() => {
+a. this.router.navigate(['/login']);
+31 });
+32 }
+33 return throwError(() => error);
+34 })
+35 );
+36 }
+37 }
+38 import { Injectable } from '@angular/core';
+39 import { BehaviorSubject, Observable, throwError } from 'rxjs';
+40 import { tap } from 'rxjs/operators';
+41 import { RegisterDto } from '../app/dtos/auth/register.dto';
+42 import { ResponseDto } from '../app/dtos/auth/response.dto';
+43 import { LoginDto } from '../app/dtos/auth/login.dto';
+44 import { IToken } from '../app/interfaces/token.interface';
+45 import { jwtDecode } from 'jwt-decode';
+46 import { ErrorHandlingService } from './error-handling.service';
+47 import { HttpService } from './http.service';
+48 
+49 @Injectable({
+50 providedIn: 'root',
+51 })
+52 export class AuthService {
+53 public authStatusSubject = new BehaviorSubject<boolean>(this.isLoggedIn());
+54 private tokenKey = 'authToken';
+
+55 constructor(
+56 private httpService: HttpService,
+57 private errorHandlingService: ErrorHandlingService
+58 ) {}
+
+59 public isLoggedIn(): boolean {
+60 return !!localStorage.getItem(this.tokenKey);
+61 }
+
+62 public decodeToken(): IToken | null {
+63 const token = localStorage.getItem(this.tokenKey);
+64 if (token) {
+65 try {
+66 return jwtDecode<IToken>(token);
+67 } catch (error) {
+68 this.errorHandlingService.handleError<IToken>()(
+69 throwError(() => error)
+70 );
+71 return null;
+72 }
+73 }
+74 return null;
+75 }
+
+76 public register(registerDto: RegisterDto): Observable<void> {
+77 return this.httpService
+78 .post<void>('auth', 'register', registerDto)
+79 .pipe(this.errorHandlingService.handleError<void>());
+80 }
+
+81 public login(loginDto: LoginDto): Observable<ResponseDto> {
+82 return this.httpService.post<ResponseDto>('auth', 'login', loginDto).pipe(
+83 tap((response) => {
+84 this.saveToken(response.token);
+85 this.authStatusSubject.next(true);
+86 }),
+87 this.errorHandlingService.handleError<ResponseDto>()
+88 );
+89 }
+
+90 public logout(): Observable<void> {
+91 const token = localStorage.getItem(this.tokenKey);
+
+92 return this.httpService.put<void>('auth', 'logout', { token }).pipe(
+93 tap(() => {
+94 localStorage.removeItem(this.tokenKey);
+95 this.authStatusSubject.next(false);
+96 }),
+97 this.errorHandlingService.handleError<void>()
+98 );
+99 }
+
+100 private saveToken(token: string): void {
+101 localStorage.setItem(this.tokenKey, token);
+102 }
+103 }
+
+
