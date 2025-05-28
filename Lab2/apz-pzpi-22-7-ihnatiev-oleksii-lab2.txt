@@ -374,6 +374,8 @@ GitHub репозиторій: https://github.com/NureIhnatievOleksii/apz-pzpi-2
 68 }
 
 В.3 Резервне копіювання користувацьких даних
+GitHub репозиторій: https://github.com/NureIhnatievOleksii/apz-pzpi-22-7-ihnatiev-oleksii/blob/main/Lab3/apz-pzpi-22-7-ihnatiev-oleksii-lab3/src/services/auth.service.ts
+
 01 using AirSense.Domain.AirQualityAggregate;
 02 using AirSense.Domain.AirQualityHistoryAggregate;
 03 using AirSense.Domain.LocationAggregate;
