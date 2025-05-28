@@ -157,7 +157,61 @@ UserId       UNIQUEIDENTIFIER NOT NULL
 
 
 Таблиця 11 – Специфікації API
-МетодШляхОписPOST/api/admin/assign-admin-roleПризначає роль адміністратора користувачу. Потребує дані користувача у тілі запиту.GET/api/admin/userОтримує список усіх користувачів для адміністративного перегляду або управління.POST/api/admin/ban/{userId}Блокує користувача за заданим userId. Доступно лише адміністраторам.GET/api/air-pollution/IoTОтримує дані про забруднення повітря, зібрані з IoT-пристроїв у реальному часі.GET/api/air-pollution/{userId}Отримує індивідуальні дані про якість повітря, пов’язані з певним користувачем.GET/api/air-pollution/historyПовертає історичні дані про рівень забруднення повітря за певний період.POST/api/auth/registerРеєструє нового користувача в системі.POST/api/auth/login-with-googleАутентифікація користувача через Google OAuth.POST/api/auth/login-with-githubАутентифікація користувача через GitHub OAuth.POST/api/auth/loginВхід користувача за допомогою email/паролю.PUT/api/auth/logoutВихід користувача з системи. Завершує активну сесію.POST/api/locationЗберігає або оновлює інформацію про місцезнаходження користувача або пристрою.GET/api/locationОтримує поточне або останнє збережене місцезнаходження користувача.PUT/api/user/edit-profileОновлює дані профілю користувача (наприклад, ім’я, email, фото тощо).GET/api/user/{userId}Отримує публічну або детальну інформацію про користувача за userId.POST/api/user/forgot-passwordЗапускає процес відновлення пароля — надсилає листа з посиланням на скидання.POST/api/user/reset-user-passwordСкидає пароль користувача за допомогою токена, отриманого на email.
+Метод
+Шлях
+Опис
+POST
+/api/admin/assign-admin-role
+Призначає роль адміністратора користувачу. Потребує дані користувача у тілі запиту.
+GET
+/api/admin/user
+Отримує список усіх користувачів для адміністративного перегляду або управління.
+POST
+/api/admin/ban/{userId}
+Блокує користувача за заданим userId. Доступно лише адміністраторам.
+GET
+/api/air-pollution/IoT
+Отримує дані про забруднення повітря, зібрані з IoT-пристроїв у реальному часі.
+GET
+/api/air-pollution/{userId}
+Отримує індивідуальні дані про якість повітря, пов’язані з певним користувачем.
+GET
+/api/air-pollution/history
+Повертає історичні дані про рівень забруднення повітря за певний період.
+POST
+/api/auth/register
+Реєструє нового користувача в системі.
+POST
+/api/auth/login-with-google
+Аутентифікація користувача через Google OAuth.
+POST
+/api/auth/login-with-github
+Аутентифікація користувача через GitHub OAuth.
+POST
+/api/auth/login
+Вхід користувача за допомогою email/паролю.
+PUT
+/api/auth/logout
+Вихід користувача з системи. Завершує активну сесію.
+POST
+/api/location
+Зберігає або оновлює інформацію про місцезнаходження користувача або пристрою.
+GET
+/api/location
+Отримує поточне або останнє збережене місцезнаходження користувача.
+PUT
+/api/user/edit-profile
+Оновлює дані профілю користувача (наприклад, ім’я, email, фото тощо).
+GET
+/api/user/{userId}
+Отримує публічну або детальну інформацію про користувача за userId.
+POST
+/api/user/forgot-password
+Запускає процес відновлення пароля — надсилає листа з посиланням на скидання.
+POST
+/api/user/reset-user-password
+Скидає пароль користувача за допомогою токена, отриманого на email.
+
 4 ВИСНОВКИ
 Під час виконання лабораторної роботи було розроблено серверну частину програмної системи.
 
@@ -180,23 +234,19 @@ UserId       UNIQUEIDENTIFIER NOT NULL
 Графічні моделі
 
 
-Рисунок Б.1 – UML діаграма прецедентів взаємодії адміністратора та користувача з системою
+Рисунок Б.1 — ER-діаграма даних
 
-Рисунок Б.2 – UML діаграма прецедентів взаємодії IoT-пристроїв з системою
+Рисунок Б.2 — Структура бази даних
 
-Рисунок Б.3 – Діаграма розгортання
-
-Рисунок Б.4 – UML діаграма діяльності
-
-
-Рисунок Б.5 – ER-діаграма БД
+Рисунок Б.3 — UML-діаграма прецедентів
 
 
 
 Додаток В
 Програмний код
 
-В.1 Фрагменти програмного коду для демонстрації взаємодії серверної частини з БД
+В.1 Математична обробка прикладних даних
+GitHub репозиторій: https://github.com/NureIhnatievOleksii/apz-pzpi-22-7-ihnatiev-oleksii/blob/main/Lab3/apz-pzpi-22-7-ihnatiev-oleksii-lab3/src/app/components/comments-list/comments-list.component.ts.
 1  using Microsoft.AspNetCore.Identity;
 2  using Microsoft.EntityFrameworkCore;
 3  using AirSense.Application.Interfaces.Repositories;
@@ -240,7 +290,8 @@ UserId       UNIQUEIDENTIFIER NOT NULL
 37     }
 38 }
 
-В.2 Фрагменти програмного коду для демонстрації взаємодії серверної частини з клієнтами
+В.2 Адміністрування бізнес-логіки системи
+GitHub репозиторій: https://github.com/NureIhnatievOleksii/apz-pzpi-22-7-ihnatiev-oleksii/blob/main/Lab2/apz-pzpi-22-7-ihnatiev-oleksii-lab2/AirSense.Api/Controllers/AuthController.cs
 1  [HttpPost("register")]
 2  public async Task<IActionResult> Register([FromBody] RegisterCommand
 3      command, CancellationToken cancellationToken)
@@ -321,3 +372,52 @@ UserId       UNIQUEIDENTIFIER NOT NULL
 66         return new AuthResponseDto { IsSuccess = success, ErrorMessage = errorMessage, Token = token };
 67     }
 68 }
+
+В.3 Резервне копіювання користувацьких даних
+01 using AirSense.Domain.AirQualityAggregate;
+02 using AirSense.Domain.AirQualityHistoryAggregate;
+03 using AirSense.Domain.LocationAggregate;
+04 using AirSense.Domain.UserAggregate;
+05 using Microsoft.AspNetCore.Identity;
+06 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+07 using Microsoft.EntityFrameworkCore;
+08 
+09 namespace AirSense.Infrastructure.Database;
+10 
+11 public class AirSenseContext(DbContextOptions<AirSenseContext> options) : IdentityDbContext<User, IdentityRole<Guid>, Guid>(options)
+12 {
+13     public DbSet<AirQuality> AirQualitys { get; set; }
+14     public DbSet<AirQualityHistory> AirQualityHistorys { get; set; }
+15     public DbSet<Location> Locations { get; set; }
+16 
+17     protected override void OnModelCreating(ModelBuilder modelBuilder)
+18     {
+19         base.OnModelCreating(modelBuilder);
+20 
+21         modelBuilder.Entity<Location>(entity =>
+22         {
+23             entity.HasKey(l => l.LocationId);
+24             entity.HasOne(l => l.User)
+25                   .WithMany(u => u.Locations) // Убедитесь, что User имеет коллекцию Locations
+26                   .HasForeignKey(l => l.UserId)
+27                   .OnDelete(DeleteBehavior.Cascade); // Устанавливаем поведение при удалении
+28         });
+29 
+30         modelBuilder.Entity<AirQuality>()
+31             .HasOne(a => a.Location)
+32             .WithMany()
+33             .HasForeignKey(a => a.LocationId);
+34 
+35         modelBuilder.Entity<AirQualityHistory>()
+36             .HasOne(ah => ah.User)
+37             .WithMany()
+38             .HasForeignKey(ah => ah.UserId)
+39             .OnDelete(DeleteBehavior.Restrict); // Установка Restrict для избежания циклов
+40 
+41         modelBuilder.Entity<AirQualityHistory>()
+42             .HasOne(ah => ah.AirQuality)
+43             .WithMany()
+44             .HasForeignKey(ah => ah.AirQualityId)
+45             .OnDelete(DeleteBehavior.Restrict); // Установка Restrict для избежания циклов
+46     }
+47 }
