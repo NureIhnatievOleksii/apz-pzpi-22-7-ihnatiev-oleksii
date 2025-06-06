@@ -7,7 +7,6 @@ void main() {
   runApp(const MyApp());
 }
 
-// Корневой виджет приложения
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -344,25 +343,18 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  /// Простая функция оценки качества воздуха по 10-бальной шкале
-  /// Чем выше загрязнение — тем ниже оценка.
   int evaluateAirQuality(Map<String, dynamic> data) {
-    // Получаем значения параметров, если нет — считаем 0
     double co = (data["co"] ?? 0).toDouble();
     double no2 = (data["no2"] ?? 0).toDouble();
     double pm25 = (data["pm2_5"] ?? 0).toDouble();
 
-    // Пример простого алгоритма:
-    // Чем меньше сумма нормированных значений — тем выше оценка.
-    // Нормируем параметры по примерным лимитам (можно корректировать по реальным нормам)
-    double coNorm = (co / 10).clamp(0, 1); // допустим 10 ppm максимум
-    double no2Norm = (no2 / 200).clamp(0, 1); // допустим 200 ppb максимум
-    double pm25Norm = (pm25 / 35).clamp(0, 1); // допустим 35 µg/m3 максимум
+    double coNorm = (co / 10).clamp(0, 1);
+    double no2Norm = (no2 / 200).clamp(0, 1);
+    double pm25Norm = (pm25 / 35).clamp(0, 1);
 
     double scoreRaw = 1 - (coNorm * 0.4 + no2Norm * 0.3 + pm25Norm * 0.3);
     int score = (scoreRaw * 10).round();
 
-    // ограничим от 1 до 10
     if (score < 1) score = 1;
     if (score > 10) score = 10;
 
