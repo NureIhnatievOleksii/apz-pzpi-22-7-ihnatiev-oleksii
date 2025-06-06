@@ -1,9 +1,7 @@
-﻿МІНІСТЕРСТВО ОСВІТИ І НАУКИ УКРАЇНИ
+МІНІСТЕРСТВО ОСВІТИ І НАУКИ УКРАЇНИ
 
 ХАРКІВСЬКИЙ НАЦІОНАЛЬНИЙ
 УНІВЕРСИТЕТ РАДІОЕЛЕКТРОНІКИ
-
-
 
 
 Лабораторна робота №4
@@ -14,6 +12,9 @@
 
 
 
+Виконав:										 Перевірив:
+Ст. гр. ПЗПІ-22-7					   			   Ст. вик. каф. ПІ
+Ігнатьєв О. Г.								     Сокорчук І. П.
 
 
 
@@ -26,38 +27,14 @@
 
 
 Таблиця 1 – Історія змін 
-№
-Дата
-Версія звіту
-Опис змін та виправлень
-1
-01.06.2025
-0.1
-Створено розділ «Історія змін»
-2
-01.06.2025
-0.1
-Створено розділ «Завдання»
-3
-01.06.2025
-0.1
-Створено розділ «Опис виконаної роботи»
-4
-01.06.2025
-0.1
-Створено розділ «Висновки»
-5
-01.06.2025
-0.1
-Доданий Додаток А
-6
-01.06.2025
-0.1
-Доданий Додаток Б
-7
-01.06.2025
-0.1
-Доданий Додаток В
+№	Дата	Версія звіту	Опис змін та виправлень
+1	01.06.2025	0.1	Створено розділ «Історія змін»
+2	01.06.2025	0.1	Створено розділ «Завдання»
+3	01.06.2025	0.1	Створено розділ «Опис виконаної роботи»
+4	01.06.2025	0.1	Створено розділ «Висновки»
+5	01.06.2025	0.1	Доданий Додаток А
+6	01.06.2025	0.1	Доданий Додаток Б
+7	01.06.2025	0.1	Доданий Додаток В
 
  
 2 ЗАВДАННЯ
@@ -86,13 +63,14 @@
 На рисунку Б.2 у додатку Б наведена Структура бази даних.
 На рисунку Б.3 у додатку Б наведена UML-діаграма прецедентів.
 
+
 4 ВИСНОВКИ
 
 
 Під час виконання лабораторної роботи було розроблено мобільний програмний застосунок для будь-якої поширеної на сьогодні мобільної платформи.
 
 
-Додаток А
+ДОДАТОК А
 
 
 Посилання на відео та хронологічний опис
@@ -109,20 +87,23 @@
 01:31 Відправка даних на сервер
 01:42 Перегляд даних пристрою
 02:24 Видалення пристрою
-Додаток Б
+
+
+ДОДАТОК Б
 
 
 Графічні матеріали
 
-
+ 
 Рисунок Б.1 — ER-діаграма даних
 
-
+ 
 Рисунок Б.2 — Структура бази даних
 
-
+ 
 Рисунок Б.3 — UML-діаграма прецедентів
-Додаток В
+
+ДОДАТОК В
 
 
 Програмний код
@@ -164,6 +145,307 @@ GitHub репозиторій: https://github.com/NureIhnatievOleksii/apz-pzpi-2
 32      ),
 33    );
 34  }
-2
 
+В.2 Адміністрування бізнес-логіки системи
+GitHub репозиторій: https://github.com/NureIhnatievOleksii/apz-pzpi-22-7-ihnatiev-oleksii/blob/main/Lab4/apz-pzpi-22-7-ihnatiev-oleksii-lab4/air_sense/lib/main.dart
+1  class LoginPage extends StatelessWidget {
+ 2    const LoginPage({super.key});
+ 3
+ 4    @override
+ 5    Widget build(BuildContext context) {
+ 6      final emailController = TextEditingController();
+ 7      final passwordController = TextEditingController();
+ 8
+ 9      return Scaffold(
+10        backgroundColor: const Color(0xFFF5F7FA),
+11        appBar: AppBar(title: const Text("Вхід"), backgroundColor: Colors.teal),
+12        body: Center(
+13          child: SingleChildScrollView(
+14            padding: const EdgeInsets.symmetric(horizontal: 24),
+15            child: Card(
+16              shape: RoundedRectangleBorder(
+17                borderRadius: BorderRadius.circular(16),
+18              ),
+19              elevation: 8,
+20              shadowColor: Colors.teal.withOpacity(0.4),
+21              child: Padding(
+22                padding: const EdgeInsets.all(24),
+23                child: Column(
+24                  mainAxisSize: MainAxisSize.min,
+25                  children: [
+26                    const Text(
+27                      "Увійти до облікового запису",
+28                      style: TextStyle(
+29                        fontSize: 24,
+30                        fontWeight: FontWeight.bold,
+31                        color: Colors.teal,
+32                      ),
+33                    ),
+34                    const SizedBox(height: 24),
+35                    TextField(
+36                      controller: emailController,
+37                      keyboardType: TextInputType.emailAddress,
+38                      decoration: const InputDecoration(
+39                        labelText: "Email",
+40                        prefixIcon: Icon(Icons.email_outlined),
+41                        border: OutlineInputBorder(),
+42                      ),
+43                    ),
+44                    const SizedBox(height: 16),
+45                    TextField(
+46                      controller: passwordController,
+47                      obscureText: true,
+48                      decoration: const InputDecoration(
+49                        labelText: "Пароль",
+50                        prefixIcon: Icon(Icons.lock_outline),
+51                        border: OutlineInputBorder(),
+52                      ),
+53                    ),
+54                    const SizedBox(height: 24),
+55                    SizedBox(
+56                      width: double.infinity,
+57                      child: ElevatedButton(
+58                        style: ElevatedButton.styleFrom(
+59                          backgroundColor: Colors.teal,
+60                          padding: const EdgeInsets.symmetric(vertical: 14),
+61                          shape: RoundedRectangleBorder(
+62                            borderRadius: BorderRadius.circular(12),
+63                          ),
+64                          textStyle: const TextStyle(fontSize: 18),
+65                        ),
+66                        onPressed: () async {
+67                          final email = emailController.text;
+68                          final password = passwordController.text;
+69
+70                          final uri = Uri.parse(
+71                            'http://localhost:6419/api/auth/login',
+72                          );
+73                          final response = await http.post(
+74                            uri,
+75                            headers: {'Content-Type': 'application/json'},
+76                            body: jsonEncode({
+77                              'email': email,
+78                              'password': password,
+79                            }),
+80                          );
+81
+82                          if (response.statusCode == 200) {
+83                            final data = jsonDecode(response.body);
+84                            final token = data['token'];
+85
+86                            Navigator.pushReplacement(
+87                              context,
+88                              MaterialPageRoute(
+89                                builder: (context) => HomePage(token: token),
+90                              ),
+91                            );
+92                          } else {
+93                            ScaffoldMessenger.of(context).showSnackBar(
+94                              SnackBar(
+95                                content: Text("Помилка входу: ${response.body}"),
+96                              ),
+97                            );
+98                          }
+99                        },
+100                       child: const Text("Увійти"),
+101                     ),
+102                   ),
+103                   const SizedBox(height: 16),
+104                   TextButton(
+105                     onPressed: () {
+106                       Navigator.push(
+107                         context,
+108                         MaterialPageRoute(
+109                           builder: (context) => const RegisterPage(),
+110                         ),
+111                       );
+112                     },
+113                     child: const Text(
+114                       "Немає облікового запису? Зареєструватись",
+115                       style: TextStyle(color: Colors.teal),
+116                     ),
+117                   ),
+118                 ],
+119               ),
+120             ),
+121           ),
+122         ),
+123       ),
+124     );
+125   }
+126 }
+127
+128 // REGISTER PAGE
+129 class RegisterPage extends StatelessWidget {
+130   const RegisterPage({super.key});
+131
+132   @override
+133   Widget build(BuildContext context) {
+134     final userNameController = TextEditingController();
+135     final emailController = TextEditingController();
+136     final passwordController = TextEditingController();
+137
+138     return Scaffold(
+139       backgroundColor: const Color(0xFFF5F7FA),
+140       appBar: AppBar(
+141         title: const Text("Регистрация"),
+142         backgroundColor: Colors.teal,
+143       ),
+144       body: Center(
+145         child: SingleChildScrollView(
+146           padding: const EdgeInsets.symmetric(horizontal: 24),
+147           child: Card(
+148             shape: RoundedRectangleBorder(
+149               borderRadius: BorderRadius.circular(16),
+150             ),
+151             elevation: 8,
+152             shadowColor: Colors.teal.withOpacity(0.4),
+153             child: Padding(
+154               padding: const EdgeInsets.all(24),
+155               child: Column(
+156                 mainAxisSize: MainAxisSize.min,
+157                 children: [
+158                   const Text(
+159                     "Создать аккаунт",
+160                     style: TextStyle(
+161                       fontSize: 24,
+162                       fontWeight: FontWeight.bold,
+163                       color: Colors.teal,
+164                     ),
+165                   ),
+166                   const SizedBox(height: 24),
+167                   TextField(
+168                     controller: userNameController,
+169                     decoration: const InputDecoration(
+170                       labelText: "Ім'я користувача",
+171                       prefixIcon: Icon(Icons.person_outline),
+172                       border: OutlineInputBorder(),
+173                     ),
+174                   ),
+175                   const SizedBox(height: 16),
+176                   TextField(
+177                     controller: emailController,
+178                     keyboardType: TextInputType.emailAddress,
+179                     decoration: const InputDecoration(
+180                       labelText: "Email",
+181                       prefixIcon: Icon(Icons.email_outlined),
+182                       border: OutlineInputBorder(),
+183                     ),
+184                   ),
+185                   const SizedBox(height: 16),
+186                   TextField(
+187                     controller: passwordController,
+188                     obscureText: true,
+189                     decoration: const InputDecoration(
+190                       labelText: "Пароль",
+191                       prefixIcon: Icon(Icons.lock_outline),
+192                       border: OutlineInputBorder(),
+193                     ),
+194                   ),
+195                   const SizedBox(height: 24),
+196                   SizedBox(
+197                     width: double.infinity,
+198                     child: ElevatedButton(
+199                       style: ElevatedButton.styleFrom(
+200                         backgroundColor: Colors.teal,
+201                         padding: const EdgeInsets.symmetric(vertical: 14),
+202                         shape: RoundedRectangleBorder(
+203                           borderRadius: BorderRadius.circular(12),
+204                         ),
+205                         textStyle: const TextStyle(fontSize: 18),
+206                       ),
+207                       onPressed: () async {
+208                         final userName = userNameController.text;
+209                         final email = emailController.text;
+210                         final password = passwordController.text;
+211
+212                         final uri = Uri.parse(
+213                           'http://localhost:6419/api/auth/register',
+214                         );
+215                         final response = await http.post(
+216                           uri,
+217                           headers: {'Content-Type': 'application/json'},
+218                           body: jsonEncode({
+219                             'userName': userName,
+220                             'email': email,
+221                             'password': password,
+222                           }),
+223                         );
+224
+225                         if (response.statusCode == 200 ||
+226                             response.statusCode == 201) {
+227                           ScaffoldMessenger.of(context).showSnackBar(
+228                             const SnackBar(content: Text("Реєстрація успішна")),
+229                           );
+230                           Navigator.pop(context);
+231                         } else {
+232                           ScaffoldMessenger.of(context).showSnackBar(
+233                             SnackBar(
+234                               content: Text("Помилка: ${response.body}"),
+235                             ),
+236                           );
+237                         }
+238                       },
+239                       child: const Text("Зареєструватись"),
+240                     ),
+241                   ),
+242                 ],
+243               ),
+244             ),
+245           ),
+246         ),
+247       ),
+248     );
+249   }
+250 }
 
+В.3 Резервне копіювання користувацьких даних
+GitHub репозиторій: https://github.com/NureIhnatievOleksii/apz-pzpi-22-7-ihnatiev-oleksii/blob/main/Lab3/apz-pzpi-22-7-ihnatiev-oleksii-lab3/src/services/auth.service.ts
+
+01 using AirSense.Domain.AirQualityAggregate;
+02 using AirSense.Domain.AirQualityHistoryAggregate;
+03 using AirSense.Domain.LocationAggregate;
+04 using AirSense.Domain.UserAggregate;
+05 using Microsoft.AspNetCore.Identity;
+06 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+07 using Microsoft.EntityFrameworkCore;
+08 
+09 namespace AirSense.Infrastructure.Database;
+10 
+11 public class AirSenseContext(DbContextOptions<AirSenseContext> options) : IdentityDbContext<User, IdentityRole<Guid>, Guid>(options)
+12 {
+13     public DbSet<AirQuality> AirQualitys { get; set; }
+14     public DbSet<AirQualityHistory> AirQualityHistorys { get; set; }
+15     public DbSet<Location> Locations { get; set; }
+16 
+17     protected override void OnModelCreating(ModelBuilder modelBuilder)
+18     {
+19         base.OnModelCreating(modelBuilder);
+20 
+21         modelBuilder.Entity<Location>(entity =>
+22         {
+23             entity.HasKey(l => l.LocationId);
+24             entity.HasOne(l => l.User)
+25                   .WithMany(u => u.Locations) // Убедитесь, что User имеет коллекцию Locations
+26                   .HasForeignKey(l => l.UserId)
+27                   .OnDelete(DeleteBehavior.Cascade); // Устанавливаем поведение при удалении
+28         });
+29 
+30         modelBuilder.Entity<AirQuality>()
+31             .HasOne(a => a.Location)
+32             .WithMany()
+33             .HasForeignKey(a => a.LocationId);
+34 
+35         modelBuilder.Entity<AirQualityHistory>()
+36             .HasOne(ah => ah.User)
+37             .WithMany()
+38             .HasForeignKey(ah => ah.UserId)
+39             .OnDelete(DeleteBehavior.Restrict); // Установка Restrict для избежания циклов
+40 
+41         modelBuilder.Entity<AirQualityHistory>()
+42             .HasOne(ah => ah.AirQuality)
+43             .WithMany()
+44             .HasForeignKey(ah => ah.AirQualityId)
+45             .OnDelete(DeleteBehavior.Restrict); // Установка Restrict для избежания циклов
+46     }
+47 }
