@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "air_sense",
+      "request": "launch",
+      "type": "dart",
+      "args": ["-d", "chrome", "--web-port=6894"]
+    },
+    {
+      "name": "air_sense (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "args": ["-d", "chrome", "--web-port=6894"],
+      "flutterMode": "profile"
+    },
+    {
+      "name": "air_sense (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "args": ["-d", "chrome", "--web-port=6894"],
+      "flutterMode": "release"
+    }
+  ]
+}
