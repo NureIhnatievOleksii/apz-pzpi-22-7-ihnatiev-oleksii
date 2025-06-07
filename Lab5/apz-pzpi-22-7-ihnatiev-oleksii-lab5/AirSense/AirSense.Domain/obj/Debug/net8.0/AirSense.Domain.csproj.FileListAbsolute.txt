@@ -1,0 +1,12 @@
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Domain\bin\Debug\net8.0\AirSense.Domain.deps.json
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Domain\bin\Debug\net8.0\AirSense.Domain.dll
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Domain\bin\Debug\net8.0\AirSense.Domain.pdb
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Domain\obj\Debug\net8.0\AirSense.Domain.csproj.AssemblyReference.cache
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Domain\obj\Debug\net8.0\AirSense.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Domain\obj\Debug\net8.0\AirSense.Domain.AssemblyInfoInputs.cache
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Domain\obj\Debug\net8.0\AirSense.Domain.AssemblyInfo.cs
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Domain\obj\Debug\net8.0\AirSense.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Domain\obj\Debug\net8.0\AirSense.Domain.dll
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Domain\obj\Debug\net8.0\refint\AirSense.Domain.dll
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Domain\obj\Debug\net8.0\AirSense.Domain.pdb
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Domain\obj\Debug\net8.0\ref\AirSense.Domain.dll

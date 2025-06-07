@@ -1,0 +1,49 @@
+name: dockercompose10042567682921047034
+services:
+  airsense.api:
+    build:
+      context: C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense
+      dockerfile: AirSense.Api/Dockerfile
+    depends_on:
+      mssql-container:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "80"
+    image: airsenseapi
+    networks:
+      demoappnetowrk: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Empty\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Empty\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  mssql-container:
+    container_name: mssql-container
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: MyDemoPassword@2022
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      demoappnetowrk: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "8002"
+        protocol: tcp
+networks:
+  demoappnetowrk:
+    name: dockercompose10042567682921047034_demoappnetowrk

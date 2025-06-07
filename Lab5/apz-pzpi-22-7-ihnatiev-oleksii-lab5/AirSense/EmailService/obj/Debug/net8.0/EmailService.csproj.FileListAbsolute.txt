@@ -1,0 +1,12 @@
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\EmailService\bin\Debug\net8.0\EmailService.deps.json
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\EmailService\bin\Debug\net8.0\EmailService.dll
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\EmailService\bin\Debug\net8.0\EmailService.pdb
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\EmailService\obj\Debug\net8.0\EmailService.csproj.AssemblyReference.cache
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\EmailService\obj\Debug\net8.0\EmailService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\EmailService\obj\Debug\net8.0\EmailService.AssemblyInfoInputs.cache
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\EmailService\obj\Debug\net8.0\EmailService.AssemblyInfo.cs
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\EmailService\obj\Debug\net8.0\EmailService.csproj.CoreCompileInputs.cache
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\EmailService\obj\Debug\net8.0\EmailService.dll
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\EmailService\obj\Debug\net8.0\refint\EmailService.dll
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\EmailService\obj\Debug\net8.0\EmailService.pdb
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\EmailService\obj\Debug\net8.0\ref\EmailService.dll

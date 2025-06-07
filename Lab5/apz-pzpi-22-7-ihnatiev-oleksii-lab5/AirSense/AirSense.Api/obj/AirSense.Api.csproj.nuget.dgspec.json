@@ -1,0 +1,489 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Api\\AirSense.Api.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Api\\AirSense.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Api\\AirSense.Api.csproj",
+        "projectName": "AirSense.Api",
+        "projectPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Api\\AirSense.Api.csproj",
+        "packagesPath": "C:\\Users\\Empty\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Empty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://repoz.s3.us-west-2.amazonaws.com/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Application\\AirSense.Application.csproj": {
+                "projectPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Application\\AirSense.Application.csproj"
+              },
+              "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Infrastructure\\AirSense.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Infrastructure\\AirSense.Infrastructure.csproj"
+              },
+              "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\EmailService\\EmailService.csproj": {
+                "projectPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\EmailService\\EmailService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MQTTnet": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "MQTTnet.AspNetCore": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "MQTTnet.Extensions.ManagedClient": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.21.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Application\\AirSense.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Application\\AirSense.Application.csproj",
+        "projectName": "AirSense.Application",
+        "projectPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Application\\AirSense.Application.csproj",
+        "packagesPath": "C:\\Users\\Empty\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Empty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://repoz.s3.us-west-2.amazonaws.com/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Domain\\AirSense.Domain.csproj": {
+                "projectPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Domain\\AirSense.Domain.csproj"
+              },
+              "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\EmailService\\EmailService.csproj": {
+                "projectPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\EmailService\\EmailService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.9.2, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.2.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Domain\\AirSense.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Domain\\AirSense.Domain.csproj",
+        "projectName": "AirSense.Domain",
+        "projectPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Domain\\AirSense.Domain.csproj",
+        "packagesPath": "C:\\Users\\Empty\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Empty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://repoz.s3.us-west-2.amazonaws.com/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Infrastructure\\AirSense.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Infrastructure\\AirSense.Infrastructure.csproj",
+        "projectName": "AirSense.Infrastructure",
+        "projectPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Infrastructure\\AirSense.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Empty\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Empty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://repoz.s3.us-west-2.amazonaws.com/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Application\\AirSense.Application.csproj": {
+                "projectPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\AirSense.Application\\AirSense.Application.csproj"
+              },
+              "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\EmailService\\EmailService.csproj": {
+                "projectPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\EmailService\\EmailService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\EmailService\\EmailService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\EmailService\\EmailService.csproj",
+        "projectName": "EmailService",
+        "projectPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\EmailService\\EmailService.csproj",
+        "packagesPath": "C:\\Users\\Empty\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Empty\\Desktop\\arkpz-pzpi-22-7-ihnatiev-oleksii-main\\Task5\\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\\AirSense\\EmailService\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Empty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://repoz.s3.us-west-2.amazonaws.com/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.8.0, )"
+            },
+            "NETCore.MailKit": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\bin\Debug\net8.0\AirSense.Application.deps.json
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\bin\Debug\net8.0\AirSense.Application.dll
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\bin\Debug\net8.0\AirSense.Application.pdb
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\bin\Debug\net8.0\AirSense.Domain.dll
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\bin\Debug\net8.0\EmailService.dll
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\bin\Debug\net8.0\AirSense.Domain.pdb
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\bin\Debug\net8.0\EmailService.pdb
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\obj\Debug\net8.0\AirSense.Application.csproj.AssemblyReference.cache
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\obj\Debug\net8.0\AirSense.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\obj\Debug\net8.0\AirSense.Application.AssemblyInfoInputs.cache
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\obj\Debug\net8.0\AirSense.Application.AssemblyInfo.cs
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\obj\Debug\net8.0\AirSense.Application.csproj.CoreCompileInputs.cache
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\obj\Debug\net8.0\AirSense.F43252B8.Up2Date
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\obj\Debug\net8.0\AirSense.Application.dll
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\obj\Debug\net8.0\refint\AirSense.Application.dll
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\obj\Debug\net8.0\AirSense.Application.pdb
+C:\Users\Empty\Desktop\arkpz-pzpi-22-7-ihnatiev-oleksii-main\Task5\arkpz-pzpi-22-7-ihnatiev-oleksii-task5\AirSense\AirSense.Application\obj\Debug\net8.0\ref\AirSense.Application.dll
