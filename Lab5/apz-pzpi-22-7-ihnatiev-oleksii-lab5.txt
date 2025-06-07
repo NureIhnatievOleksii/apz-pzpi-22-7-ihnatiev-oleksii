@@ -1,0 +1,161 @@
+﻿МІНІСТЕРСТВО ОСВІТИ І НАУКИ УКРАЇНИ
+
+ХАРКІВСЬКИЙ НАЦІОНАЛЬНИЙ
+УНІВЕРСИТЕТ РАДІОЕЛЕКТРОНІКИ
+
+
+
+Лабораторна робота №5
+
+
+з дисципліни
+«Архітектура програмного забезпечення»
+
+
+
+Виконали:                                                                                        Перевірив:
+ст. гр. ПЗПІ-24-7                                                                             Олійник О. В.
+Ігнатьєв О. Г
+
+
+
+
+
+Харків 2025
+1 ІСТОРІЯ ЗМІН
+
+
+Зміни звіту наведені у таблиці 1.1.
+Таблиця 1.1 - Історія змін
+№ДатаВерсія звітуОпис змін119.05.20250.1Створено розділ “Історія змін”219.05.20250.1Створено розділ “Завдання”319.05.20250.1Створено розділ “Опис виконаної роботи”419.05.20250.1Створено розділ “Висновки”519.05.20250.1Доданий Додаток А619.05.20250.1Доданий Додаток Б727.05.20250.2Відредаговано розділ “Опис виконаної роботи”
+
+2 ЗАВДАННЯ
+
+
+Необхідно розгорнути програмний застосунок.
+Проаналізуйте завдання.
+Виконайте контрольні завдання.
+Відкрийте створений на попередній лабораторній роботі репозиторій GitHub.
+Створіть у репозиторії директорію Task5 та текстовий файл з описом інженерних рішень у цій частині проєкту, як вказано у додатку З
+Зафіксуйте кожну внесену зміну командою git commit з відповідним коментарем та фіксуйте цією командою усі наступні зміни у проєкті.
+Створіть у директорії Task5 піддиректорію для програмного коду, як вказано у додатку З
+Створіть програмний код, завантажте його у створену піддиректорію, зафіксуйте внесені у репозиторій зміни
+Виконайте функціональне тестування створеного програмного коду та створіть відеозапис цього тестування тривалістю 7..10 хвилин з усними поясненнями процесу тестування
+Завантажте створений відеозапис тестування YouTube канал для вашого облікового запису в домені @nure.ua
+Створіть для завантаженого запису його хронологічний опис.
+Оформіть звіт у форматі pdf та завантажте його на навчальну платформу https://dl.nure.ua/
+У коментарях до завантаженого звіту вкажіть посилання на відеозапис тестування у вашому каналі YouTube.
+
+
+3 ОПИС ВИКОНАНОЇ РОБОТИ
+
+
+Серверна частина програмної системи реалізована на платформі .NET та розгортається за допомогою Docker і Docker Compose версії 3.8.
+Для зберігання даних використовується база даних Microsoft SQL Server, запущена у контейнері mssql-container. Налаштування бази включають змінні середовища ACCEPT_EULA=Y та SA_PASSWORD=MyDemoPassword@2025. База доступна на порту 8002.
+Для доступу до бази даних у бекенд-сервісі AirSense.Api використовується рядок підключення, що спрямований на контейнер mssql-container.
+Бекенд розгортається із директорії ./AirSense за допомогою Dockerfile, розташованого у AirSense.Api/Dockerfile. Для запуску сервісу налаштовані такі параметри оточення: ключі JWT, термін дії токенів, видавець, аудиторія, а також логування.
+Для фронтенд-частини використовується додаток на Angular, що збирається з директорії ./Client. Він також контейнеризований та доступний на порту 4200.
+Всі сервіси об'єднані у мережу Docker під назвою demoappnetwork.
+Для оновлення бази даних використовується команда міграції Entity Framework, яка запускається автоматично під час старту бекенд-сервісу, після перевірки доступності бази.
+Для розгортки програмної системи необхідно:
+1. Клонувати репозиторій:
+2. git clone https://github.com/NureIhnatievOleksii/apz-pzpi-22-7-ihnatiev-oleksii.git
+2. Перейти у директорію з файлом docker-compose.yml:
+3. cd apz-pzpi-22-7-ihnatiev-oleksii\Lab5\apz-pzpi-22-7-ihnatiev-oleksii-lab5
+3. Запустити розгортку за допомогою:
+4. docker compose up -d
+Після цього:
+• Сервер бекенду буде доступний за адресою http://127.0.0.1:8080
+• Фронтенд — http://127.0.0.1:4200
+• MSSQL сервер працюватиме на порту 8002
+
+4 ВИСНОВКИ
+
+
+Під час виконання лабораторної роботи було розгорнуто серверну та веб частини програмної системи.
+
+
+ДОАТОК А
+
+
+Посилання на відео та хронологічний опис
+
+Відеозапис доповіді на YouTube: https://youtu.be/czVOxzXmR7c
+Хронологічний опис доповіді:
+00:00 Вступ 
+00:20 Демонстрація контейнеризації 
+01:46 Демонстрація клієнтської частини (десктопний варіант) 
+04:40 Запуск IoT 
+09:27 Демонстрація клієнтської частини (мобільний застосунок)
+
+
+
+
+
+
+ДОАТОК Б
+
+
+Програмний код
+
+Б.1 Конфігурація Docker Compose
+GitHub репозиторій: https://github.com/NureIhnatievOleksii/apz-pzpi-22-7-ihnatiev-oleksii/tree/main/Lab5/apz-pzpi-22-7-ihnatiev-oleksii-lab5
+1  version: "3.8"
+2
+3  services:
+4    angular-app:
+5      build:
+6        context: ./Client
+7        dockerfile: Dockerfile
+8      ports:
+9        - "4200:4200"
+10     volumes:
+11       - ./Client:/usr/src/app
+12     stdin_open: true
+13     tty: true
+14     networks:
+15       - demoappnetwork
+16
+17   mssql-container:
+18     image: mcr.microsoft.com/mssql/server:latest
+19     container_name: mssql-container
+20     environment:
+21       - ACCEPT_EULA=Y
+22       - SA_PASSWORD=MyDemoPassword@2025
+23     ports:
+24       - "8002:1433"
+25     networks:
+26       - demoappnetwork
+27
+28   airSense.Api:
+29     image: ${DOCKER_REGISTRY-}forumapi
+30     build:
+31       context: ./AirSense
+32       dockerfile: AirSense.Api/Dockerfile
+33     ports:
+34       - "8080:8080"
+35     depends_on:
+36       - mssql-container
+37     networks:
+38       - demoappnetwork
+39     volumes:
+40       - ./AirSense/AirSense.Api/wwwroot:/app/wwwroot
+41     environment:
+42       - ConnectionStrings__ForumSqlAirSense=AirSense=mssql-container,1433;Database=Forum;User Id=sa;Password=MyDemoPassword@2025;TrustAirSenseCertificate=True;MultipleActiveResultSets=true
+43       - Jwt__Key=A1b2C3d4E5f6G7h8I9J0K1L2M3N4O5P6
+44       - Jwt__ExpireDays=1
+45       - Jwt__Issuer=https://localhost:4200
+46       - Jwt__Audience=https://localhost:4200
+47       - Authentication__Forum__Provider=FORUM
+48       - Authentication__Forum__TokenName=ForumToken
+49       - Logging__LogLevel__Default=Information
+50       - Logging__LogLevel__Microsoft.AspNetCore=Warning
+51     command: >
+52       bash -c "until nc -z -v -w30 mssql-container 1433; do echo waiting for mssql; sleep 5; done; dotnet ef database update"
+53
+54 networks:
+55   demoappnetwork:
+56     driver: bridge
+2
+
+
