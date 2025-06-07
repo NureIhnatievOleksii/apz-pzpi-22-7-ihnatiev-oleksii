@@ -1,0 +1,55 @@
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.content {
+  min-height: 45vh;
+}
+
+.btn-orange {
+  @extend .text-white;
+  @extend .border-0;
+  @extend .rounded-pill;
+  @extend .px-4;
+  @extend .py-2;
+
+  background-color: #f2650c;
+
+  &:hover {
+    background-color: #d7590b;
+  }
+
+  &:active {
+    background-color: #d7590b;
+  }
+}
+.motto {
+  margin-left: 40px;
+  color: darkgray;
+  padding-top: 10px;
+}
+
+.motto-key {
+  font-weight: bold;
+  color: #ff4500;
+  font-size: 1.2rem;
+}
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0px auto;
+  padding: 30px;
+}
