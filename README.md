@@ -1,7 +1,4 @@
-# apz-pzpi-22-7-ihnatiev-oleksii  
-ПЗПІ-22-7  
-Ігнатьєв Олексій  
-Патерн проєктування Command  
-Архітектура Slack  
-Програмна система для моніторингу якості повітря  
---
+Oleksii Ihnatiev
+Command Design Pattern
+Slack Architecture
+Software system for monitoring litter quality
